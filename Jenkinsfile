@@ -20,7 +20,7 @@ pipeline {
                 sh '''
                 docker stop simple-container || true
                 docker rm simple-container || true
-                docker run -d -p 3000:3000 --name simple-container simple-node-app
+                docker run -d -p 3000:3000 --restart always --name simple-container simple-node-app
                 '''
             }
         }
